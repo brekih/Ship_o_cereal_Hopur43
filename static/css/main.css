@@ -1,0 +1,39 @@
+.cereal {
+  background-color: yellow;
+  border: solid 2px rgba(155, 155, 155, .5);
+  padding-left: 200px;
+}
+.merch {
+    background-color: black;
+    color: #f1f1f1;
+    border: solid 2px rgba(155, 155, 155, .5);
+    padding-left: 200px;
+}
+
+
+.background {
+    background-image: url('https://images.unsplash.com/photo-1504308805006-0f7a5f1f0f71?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');
+    background-size: cover;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(255,255,255,0.15);
+}
+
+.navbar-center {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    top: 15%;
+}
+
+.form-control {
+    width: 50%;
+}
