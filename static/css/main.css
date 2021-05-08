@@ -3,6 +3,11 @@
   border: solid 2px rgba(155, 155, 155, .5);
   padding-left: 200px;
 }
+.checkout {
+  background-color: lightgray;
+  border: solid 2px rgba(155, 155, 155, .5);
+  padding-left: 200px;
+}
 .merch {
     background-color: black;
     color: #f1f1f1;
