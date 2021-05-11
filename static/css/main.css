@@ -14,13 +14,42 @@
     border: solid 2px rgba(155, 155, 155, .5);
     padding-left: 200px;
 }
+.opacity-info{
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-bottom: 20px;
+}
 
+.form-padding{
+    padding-top: 20px;
+    padding-left: 60px;
+    padding-right: 50%;
+}
+
+.white-text {
+    color: white;
+}
+.opacity-nav-btn{
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 20px;
+    padding-left: 70px;
+    padding-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+
+}
 
 .background {
     background-image: url('https://images.unsplash.com/photo-1504308805006-0f7a5f1f0f71?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');
     background-size: cover;
 }
-
+.tab {
+       display:inline-block;
+       margin-left: 40px;
+}
+/*
 .background::before {
     content: "";
     position: absolute;
@@ -39,6 +68,4 @@
     top: 15%;
 }
 
-.form-control {
-    width: 50%;
-}
+}*/
