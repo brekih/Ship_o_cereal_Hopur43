@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{ cereal.name }}</h1>
+    <p>{{ cereal.description }}</p>
+    <p>{{ cereal.price }}</p>
+    {% for cereal_image in cereal.cerealimage_set.all %}
+        <img src="{{ cereal_image.image }}"/>
+    {% endfor %}
+
+{% endblock %}
