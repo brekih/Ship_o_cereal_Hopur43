@@ -1,6 +1,12 @@
 <div class="sidenav">
-  <a href="#">All</a>
-  <a href="/cereals">Cereals</a>
-  <a href="/merchandise">Merchandise</a>
-  <a href="#">Books</a>
+  <a href="{% url 'cereal-index' %}"><h2>All</h2></a>
+  <a href="{% url 'cereal-index' %}"><h2>Cereals</h2></a>
+  <a href="{% url 'cereal-index' %}"><h4 style="text-indent: 5px">Healthy</h4></a>
+    <a href="{% url 'cereal-index' %}"><h4 style="text-indent: 5px">Fruity</h4></a>
+    <a href="{% url 'cereal-index' %}"><h4 style="text-indent: 5px">Sugary</h4></a>
+  <a href="{% url 'merchandise-index' %}"><h2>Merchandise</h2></a>
+    <a href="{% url 'merchandise-index' %}"><h4 style="text-indent: 5px">Books</h4></a>
+    <a href="{% url 'merchandise-index' %}"><h4 style="text-indent: 5px">Cups</h4></a>
+    <a href="{% url 'merchandise-index' %}"><h4 style="text-indent: 5px">Spoons</h4></a>
+    <a href="{% url 'merchandise-index' %}"><h4 style="text-indent: 5px">T-shirts</h4></a>
 </div>
