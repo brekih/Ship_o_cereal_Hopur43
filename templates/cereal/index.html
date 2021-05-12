@@ -1,42 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="cereal">
-        <h2>Welcome to the Cereal app!!!</h2>
-    </div>
+    {% include 'sidenav.html' %}
+    <div class="btn-group"style="left:240px">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sort <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" style="min-width:145px; width: 145px; padding:0px">
+            <li><a href="#">Sort by name |  <span class="caret"></span></a></li>
+            <li><a href="#">Sort by name |  <span class="caret" style="transform: rotate(180deg);"></span></a></li>
+            <li><a href="#">Sort by price |   <span class="caret"></span></a></li>
+            <li><a href="#">Sort by price |  <span class="caret" style="transform: rotate(180deg);"></span></a></li>
+        </ul>
+</div>
+</div>
     <div class="cerealList">
-        <div class="row">
+        <div class="row row-custom">
 
         {% for cereal in cereals %}
             {% if forloop.counter0|divisibleby:3  %}<div class="w-40"></div>{% endif %}
-            <div class="col-md-4">
-                <div class="media">
-                    <div class="media-left media-middle">
-                        <a href="/">
-                            {% if cereal.image != "" %}
-                                <img src={{ cereal.image }} class="float-left">
-                            {% else %}
-                                <img src="https://pbs.twimg.com/profile_images/1155645244563742721/tuCu6BT-.jpg" class="float-left">
-                            {% endif %}
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h1 class="media-heading">{{ cereal.name }}</h1>
-                        <h4 class="media-heading"> Description</h4>
-                        <p class="media-body"> {{ cereal.description }}</p>
-                        <div class="align-bottom">
-                            <a href="https://letmegooglethat.com/?q=cereal+description">
-                                <p>See more</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div style="text-align: center; display:inline">
-                <button type="button" class="btn" style="color:white; background-color:green; margin:10px; width: 90%;">
-                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to cart | ${{ cereal.price }}
-                </button>
-
-                </div>
-            </div>
+            {% include 'cereal/single_cereal.html' with cereal=cereal %}
         {% endfor %}
         </div>
 
