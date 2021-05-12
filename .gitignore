@@ -157,5 +157,8 @@ Thumbs.db
 # profiling data
 .prof
 
+# .Idea folder
+.idea/
+
 
 # End of https://www.toptal.com/developers/gitignore/api/django
