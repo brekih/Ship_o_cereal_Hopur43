@@ -13,15 +13,10 @@
         </ul>
 </div>
 </div>
-    <div class="cerealList">
-        <div class="row row-custom">
-
+    <div class="cereals">
         {% for cereal in cereals %}
             {% if forloop.counter0|divisibleby:3  %}<div class="w-40"></div>{% endif %}
             {% include 'cereal/single_cereal.html' with cereal=cereal %}
         {% endfor %}
-        </div>
-
-
     </div>
 {% endblock %}

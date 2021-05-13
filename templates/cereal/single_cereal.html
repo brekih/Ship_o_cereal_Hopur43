@@ -1,13 +1,11 @@
-<div class="col-md-4">
+<div class="col-md-4 col-md-4-custom">
     <div class="media">
         <div class="media-left media-middle">
-            <a href="/">
-                {% if cereal.cerealimage_set.first.image != "" %}
-                    <img src={{ cereal.cerealimage_set.first.image }} class="float-left">
-                {% else %}
-                    <img src="https://pbs.twimg.com/profile_images/1155645244563742721/tuCu6BT-.jpg" class="float-left">
-                {% endif %}
-            </a>
+            {% if cereal.cerealimage_set.first.image != "" %}
+                <img src={{ cereal.cerealimage_set.first.image }} class="float-left"/>
+            {% else %}
+                <img src="https://pbs.twimg.com/profile_images/1155645244563742721/tuCu6BT-.jpg" class="float-left"/>
+            {% endif %}
         </div>
         <div class="media-body">
             <h1 class="media-heading">{{ cereal.name }}</h1>

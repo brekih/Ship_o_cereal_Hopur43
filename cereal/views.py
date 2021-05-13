@@ -1,22 +1,59 @@
-from django.shortcuts import render, get_object_or_404
-from cereal.models import Cereal
-
-# cereals = [
-#     {'name': 'Cheerios', 'price': 4.99 , 'image':'https://www.cheerios.com/wp-content/uploads/2018/04/YBC_460x460.png', 'description':'The one and only Cheerios, we all know and love'},
-#     {'name': 'Cocoa Puffs', 'price': 5.99 , 'image':'https://i5.wal.co/asr/c4913f0b-76de-45ef-9abd-96697cf28d5c.fed751aa40ec00346d297d49849571c5.png?odnWidth=1000&odnHeight=1000&odnBg=ffffff ', 'description':'Im crazy for cocoa puffs.'},
-#     {'name': 'Lucky Charms', 'price': 6.99 , 'image':'https://res.cloudinary.com/general-mills/image/upload/q_auto,f_auto/luckyCharmsUS/wp-content/uploads/2020/02/original-460x460-1.png ', 'description':'Will mess up yo teeth.'},
-#     {'name': 'Trix', 'price': 4.99 , 'image':'https://e22d0640933e3c7f8c86-34aee0c49088be50e3ac6555f6c963fb.ssl.cf2.rackcdn.com/0016000275320_CL_Syndigo_default_large.png ', 'description':'Trix are for kids.'},
-#     {'name': 'Alpen', 'price': 3.99 , 'image':'https://www.postconsumerbrands.ca/wp-content/uploads/2018/08/Alpen-NSA-left-1.png ', 'description':'Wtf is Alpen.'},
-#     {'name': 'Gardr', 'price': 8.99 , 'image':''},
-# ]
+from django.http import JsonResponse
+from django.shortcuts import render, get_object_or_404, redirect
+from cereal.forms.cereal_form import CerealCreateForm, CerealUpdateForm
+from cereal.models import Cereal, CerealImage
 
 
 # Create your views here.
 def index(request):
+    if 'search_filter' in request.GET:
+        search_filter = request.GET['search_filter']
+        cereals = [ {
+            'id': x.id,
+            'name': x.name,
+            'description': x.description,
+            'price': x.price,
+            'firstimage': x.cerealimage_set.first().image
+        } for x in Cereal.objects.filter(name__icontains=search_filter) ]
+        return JsonResponse({'data': cereals })
     context = {'cereals': Cereal.objects.all().order_by('name')}
     return render(request, 'cereal/index.html', context )
 
 def get_cereal_by_id(request, id):
     return render(request, 'cereal/cereal_details.html', {
         'cereal':get_object_or_404(Cereal, pk=id)
+    })
+
+def create_cereal(request):
+    if request.method == 'POST':
+        form = CerealCreateForm(data=request.POST)
+        if form.is_valid():
+            cereal = form.save()
+            cereal_image = CerealImage(image=request.POST['image'], cereal=cereal)
+            cereal_image.save()
+            return redirect('cereal-index')
+
+    else:
+        form = CerealCreateForm()
+    return render(request, 'cereal/create_cereal.html', {
+        'form': form
+    })
+
+def delete_cereal(request, id):
+    cereal = get_object_or_404(Cereal, pk=id)
+    cereal.delete()
+    return redirect('cereal-index')
+
+def update_cereal(request, id):
+    instance = get_object_or_404(Cereal, pk=id)
+    if request.method == 'POST':
+        form = CerealUpdateForm(data=request.POST, instance=instance)
+        if form.is_valid():
+            form.save()
+            return redirect('cereal_details', id=id)
+    else:
+        form = CerealUpdateForm(instance=instance)
+    return render(request, 'cereal/update_cereal.html', {
+        'form': form,
+        'id' : id
     })

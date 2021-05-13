@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container" style="color:white; background: rgba(0,0,0,0.7);">
+        <form class="form form-horizontal form-padding form-background" action="{% url 'update_cereal' id %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Update" class="btn btn-primary pull-right" style="clear:both; margin: 10px 0;"/>
+        </form>
+
+    </div>
+
+{% endblock %}
