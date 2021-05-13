@@ -14,6 +14,7 @@ class Cereal(models.Model):
     description = models.CharField(max_length=255, blank=True)
     category = models.ForeignKey(CerealCategory, on_delete=models.CASCADE)
     price = models.FloatField()
+    is_merch = models.BooleanField()
 
     def __str__(self):
         return self.name

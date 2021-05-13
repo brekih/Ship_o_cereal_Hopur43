@@ -10,7 +10,8 @@ class CerealUpdateForm(ModelForm):
             'name': widgets.TextInput(attrs={'class': 'form-control'}),
             'description': widgets.TextInput(attrs={'class': 'form-control'}),
             'category': widgets.Select(attrs={'class': 'form-control'}),
-            'price': widgets.NumberInput(attrs={'class': 'form-control'})
+            'price': widgets.NumberInput(attrs={'class': 'form-control'}),
+            'is_merch': widgets.CheckboxInput(attrs={'class': 'form-control'})
         }
 
 class CerealCreateForm(ModelForm):
@@ -22,5 +23,6 @@ class CerealCreateForm(ModelForm):
             'name': widgets.TextInput(attrs={'class': 'form-control'}),
             'description': widgets.TextInput(attrs={'class': 'form-control'}),
             'category': widgets.Select(attrs={'class': 'form-control'}),
-            'price': widgets.NumberInput(attrs={'class': 'form-control'})
+            'price': widgets.NumberInput(attrs={'class': 'form-control'}),
+            'is_merch': widgets.CheckboxInput(attrs={'class': 'form-control'})
         }

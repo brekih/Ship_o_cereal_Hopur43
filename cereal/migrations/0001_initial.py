@@ -19,6 +19,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=255)),
                 ('description', models.CharField(blank=True, max_length=255)),
                 ('price', models.FloatField()),
+                ('is_merch', models.BooleanField()),
             ],
         ),
         migrations.CreateModel(
@@ -33,7 +34,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('image', models.CharField(max_length=9999)),
-                ('candy', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cereal.cereal')),
+                ('cereal', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cereal.cereal')),
             ],
         ),
         migrations.AddField(
