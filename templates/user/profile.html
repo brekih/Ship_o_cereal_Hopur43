@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container opacity-info white-text top-margin">
+    <h1>Profile</h1>
+    <div class="media-object">
+        <img src="{{ user.profile.profile_image }}" style="width:100px; height: 100px; border: solid 2px white"/>
+    </div>
+
+    <form class="form form-horizontal" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" class="btn btn-primary top-margin" value="Update" />
+    </form>
+</div>
+
+{% endblock %}

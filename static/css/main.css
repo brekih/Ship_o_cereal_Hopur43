@@ -1,0 +1,191 @@
+.cereal {
+    border: solid 2px rgba(255,255,255,1);
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    margin:auto;
+    text-align: center;
+    width: 400px;
+    justify-content: center;
+}
+.checkout {
+  background-color: lightgray;
+  border: solid 2px rgba(155, 155, 155, .5);
+  padding-left: 200px;
+}
+.merch {
+    border: solid 2px rgba(255, 255, 255, 1);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    margin: auto;
+    text-align: center;
+    width: 500px;
+    justify-content: center;
+}
+
+.cereals {
+    padding-left:250px;
+    padding-right:40px;
+    padding-top:4px;
+    margin:auto;
+}
+
+.cerealList {
+    padding-left:250px;
+    padding-top:4px;
+    margin:auto;
+}
+
+.opacity-info{
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-bottom: 20px;
+}
+/* LAURA */
+.opacity-container {
+  padding: 20px 30px;
+}
+
+.black-box {
+  background: black;
+  width: 100%;
+  height: 100%;
+}
+/* END LAURA */
+.form-padding{
+    padding-top: 20px;
+    padding-left: 60px;
+    padding-right: 50%;
+}
+
+.white-text {
+    color: white;
+}
+.opacity-nav-btn{
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 20px;
+    padding-left: 70px;
+    padding-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+
+}
+
+.background {
+    padding-top: 50px;
+    background-image: url('https://images.unsplash.com/photo-1504308805006-0f7a5f1f0f71?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');
+    background-size: cover;
+}
+
+.tab {
+       display:inline-block;
+       margin-left: 40px;
+}
+
+.checkout-navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-inverse {
+    height: 40px;
+    background: rgba(0,0,0,0.7);
+}
+
+.form-control {
+    color: black;
+}
+
+.login {
+margin-bottom:5px;
+}
+
+.dropdown-menu-login {
+    width: 300px
+}
+
+
+.col-md-4-custom {
+    border: solid 1px grey;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    height: 100%;
+    padding-left:5px;
+}
+.row-custom {
+    width:100%;
+    height:300px;
+
+}
+
+.media-object {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.media {
+    width: 100%;
+    height: 227px;
+    object-fit: cover;
+}
+
+.float-left {
+    width: 180px;
+    height: 227px;
+}
+
+.moreinfo {
+    text-decoration: underline;
+    display:flex;
+}
+.profile-image {
+    width: 40px;
+    height: 40px;
+}
+
+.details-image {
+    margin-top: 40px;
+    width: 270px;
+    height: 340px;
+}
+
+.cart-image {
+    width: 180px;
+    height: 226px;
+}
+
+.cereal-name {
+    text-align: center;
+}
+
+.cereal-description {
+    font-size: 2em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.push-down {
+    margin-top: 40px;
+}
+
+.top-margin {
+    margin-top: 20px;
+}
+
+.review-image {
+    width: 84px;
+    height: 105px;
+    float: left;
+}
+

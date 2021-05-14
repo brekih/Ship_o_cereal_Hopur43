@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container top-margin" style=" text-align: center; background-color: rgb(255,255,255,0.7"">
+        <h1>Login to Ship'O'Cereal</h1>
+        <form method="post" class="form form-horizontal">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" class="btn btn-default" value="login" />
+        </form>
+    </div>
+{% endblock %}

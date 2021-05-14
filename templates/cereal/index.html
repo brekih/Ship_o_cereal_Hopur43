@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% include 'sidenav.html' %}
+<div class="btn-group"style="left:240px">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sort <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" style="min-width:200px; width: 200px; padding:0px">
+            <li><a href="{% url 'sort' 1 %}" id="name-asc">Sort by name |  A - Z<span class="caret"></span></a></li>
+            <li><a href="{% url 'sort' 2 %}" id="name-des">Sort by name |  Z - A<span class="caret" style="transform: rotate(180deg);"></span></a></li>
+            <li><a href="{% url 'sort' 3 %}" id="price-asc">Sort by price |  Low-High <span class="caret"></span></a></li>
+            <li><a href="{% url 'sort' 4 %}" id="price-des">Sort by price |  High-Low<span class="caret" style="transform: rotate(180deg);"></span></a></li>
+        </ul>
+    </div>
+</div>
+<div class="cereals">
+    {% for cereal in cereals %}
+        {% if forloop.counter0|divisibleby:3  %}<div class="w-40"></div>{% endif %}
+        {% include 'cereal/single_cereal.html' with cereal=cereal %}
+    {% endfor %}
+</div>
+{% endblock %}

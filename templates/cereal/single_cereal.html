@@ -1,0 +1,29 @@
+<div class="col-md-4 col-md-4-custom">
+    <div class="media">
+        <div class="media-left media-middle">
+            {% if cereal.cerealimage_set.first.image != "" %}
+                <img src={{ cereal.cerealimage_set.first.image }} class="float-left"/>
+            {% else %}
+                <img src="https://pbs.twimg.com/profile_images/1155645244563742721/tuCu6BT-.jpg" class="float-left"/>
+            {% endif %}
+        </div>
+        <div class="media-body">
+            <h1 class="media-heading">{{ cereal.name }}</h1>
+            <h4 class="media-heading"> Description</h4>
+            <p class="media-body"> {{ cereal.description | slice:":30"}}...</p>
+            <div class="align-bottom">
+                <a href="/cereals/{{ cereal.id }}">
+                    <p>See more</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; display:inline">
+    <div class="btn" style="text-align: center; display:inline">
+        <div class="btn" style="color:white; background-color:green; margin:10px; width: 90%;">
+            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><a style="color:white;" onclick="window.alert('Item added to cart')" href="{% url 'cart-add' cereal.pk %}"> Add to cart | ${{ cereal.price }}</a>
+        </div>
+    </div>
+
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.payment-padding{
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-right: 55%;
+}
+.form-control-inline{
+    width: 90%;
+    display: inline;
+}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'navigation.html' %}
+    <div class="container opacity-info top-margin white-text">
+        <h1 style="text-align: center;">Congrats on the cereal, chum!</h1>
+        <br>
+        <p style="text-align: center;">Your order has been placed and will be processed within 2 weeks. That is the Ship'O'Cereal guarantee!</p>
+    <div style=" text-align: center">
+        <div class="btn" style="background-color:white;">
+            <a style="color:black;" href="{% url 'cereal-index'%}">Back to catalogue</a>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}

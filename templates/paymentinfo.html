@@ -1,0 +1,31 @@
+<div class="container top-margin">
+    <div class="row opacity-info payment-padding white-text">
+        <form method="post" >
+            <div class="form-group ">
+              <label  for="cardholderName">Cardholder name</label>
+              <input type="text" class="form-control" id="cardholderName" placeholder="placeholder" >
+            </div>
+            <div class="form-group ">
+              <label for="card number">Card number</label>
+                <input type="number" id="cardNumber" inputmode="numeric" pattern="[0-9\s]{13,16}" maxlength="16" class="form-control input-number" placeholder="Max 16 Numbers"><!-- late changes -->
+            </div>
+            <div class="form-group form-inline">
+              <label for="expoDate">Expiration date</label>
+                <br>
+              <input type="date" class="form-control" id="expoDate" placeholder="MM/DD" sqtyle="width: 60%">
+            </div>
+            <div class="form-group ">
+              <label for="cvcNumber">CVC</label>
+              <input type="number" class="form-control input-number" id="cvcNumber" placeholder="placeholder"min="000" max="999" style="width: 30%">
+            </div>
+            <button type="button" onclick="checkUserPayment()" class="btn-lg btn-block btn-success"><Confirm>Submit</Confirm></button>
+          </form>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+    populateUserPaymentData()
+})
+    </script>
+    {% include 'checkout-navbar.html' %}
+
+</div>
