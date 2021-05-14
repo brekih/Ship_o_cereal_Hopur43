@@ -6,7 +6,8 @@
     {% for cereal_image in cereal.cerealimage_set.all %}
         <img src="{{ cereal_image.image }}"/>
     {% endfor %}
-
-    <a href="{% url 'delete_cereal' cereal.id %}" class="block btn btn-primary">Delete cereal</a>
-    <a href="{% url 'update_cereal' cereal.id %}" class="block btn btn-primary">Update cereal</a>
+    {% if user.is_superuser %}
+        <a href="{% url 'delete_cereal' cereal.id %}" class="block btn btn-primary">Delete cereal</a>
+        <a href="{% url 'update_cereal' cereal.id %}" class="block btn btn-primary">Update cereal</a>
+    {% endif %}
 {% endblock %}

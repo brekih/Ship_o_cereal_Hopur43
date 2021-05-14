@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from cereal.forms.cereal_form import CerealCreateForm, CerealUpdateForm
@@ -24,7 +25,7 @@ def get_cereal_by_id(request, id):
     return render(request, 'cereal/cereal_details.html', {
         'cereal':get_object_or_404(Cereal, pk=id)
     })
-
+@login_required
 def create_cereal(request):
     if request.method == 'POST':
         form = CerealCreateForm(data=request.POST)
@@ -39,12 +40,12 @@ def create_cereal(request):
     return render(request, 'cereal/create_cereal.html', {
         'form': form
     })
-
+@login_required
 def delete_cereal(request, id):
     cereal = get_object_or_404(Cereal, pk=id)
     cereal.delete()
     return redirect('cereal-index')
-
+@login_required
 def update_cereal(request, id):
     instance = get_object_or_404(Cereal, pk=id)
     if request.method == 'POST':
@@ -58,3 +59,17 @@ def update_cereal(request, id):
         'form': form,
         'id' : id
     })
+
+def cereal_products(request, id):
+    if id != 0:
+        context = {'cereals': Cereal.objects.filter(is_merch=False, category_id=id).all().order_by('name')}
+    else:
+        context = {'cereals': Cereal.objects.filter(is_merch=False).all().order_by('name')}
+    return render(request, 'cereal/index.html', context )
+
+def merch_products(request, id):
+    if id != 0:
+        context = {'cereals': Cereal.objects.filter(is_merch=True, category_id=id).all().order_by('name')}
+    else:
+        context = {'cereals': Cereal.objects.filter(is_merch=True).all().order_by('name')}
+    return render(request, 'cereal/index.html', context )
