@@ -38,11 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cereal.apps.CerealConfig',
-    'merchandise.apps.MerchandiseConfig',
     'checkout.apps.CheckoutConfig',
     'payment.apps.PaymentConfig',
     'review.apps.ReviewConfig',
-    'signup.apps.SignupConfig',
     'user.apps.UserConfig',
     'cartapp.apps.CartappConfig',
 ]
