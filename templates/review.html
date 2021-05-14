@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row opacity-info white-text opacity-container">
+    <div class="col-md-3">
+      <div class="black-box">
+        <ul>
+          <li>
+            Cheerios
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <form>
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" class="form-control" id="fullName" placeholder="placeholder" readonly>
+        </div>
+        <div class="form-group">
+          <label for="streetName">Street Name</label>
+          <input type="text" class="form-control disabled" id="streetName" placeholder="placeholder" readonly>
+        </div>
+        <div class="form-group">
+          <label for="houseNumber">House Number</label>
+          <input type="text" class="form-control" id="houseNumber" placeholder="placeholder" readonly>
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" class="form-control" id="country" placeholder="placeholder" readonly>
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" class="form-control" id="city" placeholder="placeholder" readonly>
+        </div>
+        <div class="form-group">
+          <label for="postalCode">Postal Code</label>
+          <input type="text" class="form-control" id="postalCode" placeholder="placeholder" readonly>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-3">
+      <form>
+        <div class="form-group">
+          <label for="cardholderName">Cardholder Name</label>
+          <input type="text" class="form-control" id="cardholderName" placeholder="placeholder" readonly>
+        </div>
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" class="form-control" id="cardNumber" placeholder="placeholder" readonly>
+        </div>
+        <div class="form-group">
+          <label for="expoDate">Expiration Date</label>
+          <input type="text" class="form-control" id="expoDate" placeholder="placeholder" readonly>
+        </div>
+        <div class="form-group">
+          <label for="cvcNumber">CVC</label>
+          <input type="text" class="form-control" id="cvcNumber" placeholder="placeholder" readonly>
+        </div>
+      </form>
+    </div>
+  </div>
+
+    <script>
+        window.addEventListener('load', function() {
+    populateUserData();
+    populateUserPaymentData();
+})
+    </script>
+
+
+    {% include 'checkout-navbar.html' %}
+
+</div>
