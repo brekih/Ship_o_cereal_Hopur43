@@ -13,19 +13,22 @@
             <img src="{{ cereal_image.image }}" class="details-image"/>
             {% endfor %}
             </div>
-            <div class="col-md-6 push-down">
-                <h1 class="">{{ cereal.name }}</h1>
-                <h3>Description:</h3>
-                <p class="cereal-description">{{ cereal.description }}</p>
-                <h3>Price:</h3>
-                <p class="cereal-description">${{ cereal.price }}</p>
-            </div>
-        </div>
-            <div class="btn" style="text-align: center; display:inline">
-                <div class="btn top-margin" style="color:white; background-color:green; margin-left: 40px; width: 90%;">
-                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><a style="color:white;" onclick="window.alert('Item added to cart')" href="{% url 'cart-add' cereal.pk %}"> Add to cart | ${{ cereal.price }}</a>
+            {% if user.is_authenticated %}
                 </div>
-            </div>
+                    <div class="btn" style="text-align: center; display:inline">
+                        <div class="btn top-margin" style="color:white; background-color:green; margin-left: 40px; width: 90%;">
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><a style="color:white;" onclick="window.alert('Item added to cart')" href="{% url 'cart-add' cereal.pk %}"> Add to cart | ${{ cereal.price }}</a>
+                        </div>
+                    </div>
+            {% else %}
+                </div>
+                    <div class="btn" style="text-align: center; display:inline">
+                        <div class="btn top-margin" style="color:white; background-color:green; margin-left: 40px; width: 90%;">
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><a style="color:white;" onclick="window.alert('Login to purchase')" href="{% url 'login' %}"> Add to cart | ${{ cereal.price }}</a>
+                        </div>
+                    </div>
+
+            {% endif %}
     </div>
 
 {% endblock %}
