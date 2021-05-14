@@ -18,12 +18,22 @@
             </div>
         </div>
     </div>
-    <div style="text-align: center; display:inline">
-    <div class="btn" style="text-align: center; display:inline">
-        <div class="btn" style="color:white; background-color:green; margin:10px; width: 90%;">
-            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><a style="color:white;" onclick="window.alert('Item added to cart')" href="{% url 'cart-add' cereal.pk %}"> Add to cart | ${{ cereal.price }}</a>
+    {% if user.is_authenticated %}
+        <div style="text-align: center; display:inline">
+        <div class="btn" style="text-align: center; display:inline">
+            <div class="btn" style="color:white; background-color:green; margin:10px; width: 90%;">
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><a style="color:white;" onclick="window.alert('Item added to cart')" href="{% url 'cart-add' cereal.pk %}"> Add to cart | ${{ cereal.price }}</a>
+            </div>
         </div>
-    </div>
+
+    {% else %}
+            <div style="text-align: center; display:inline">
+        <div class="btn" style="text-align: center; display:inline">
+            <div class="btn" style="color:white; background-color:green; margin:10px; width: 90%;">
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><a style="color:white;" onclick="window.alert('Login to purchase')" href="{% url 'login' %}"> Add to cart | ${{ cereal.price }}</a>
+            </div>
+        </div>
+    {% endif %}
 
     </div>
 </div>
