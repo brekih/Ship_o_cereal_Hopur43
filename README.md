@@ -2,7 +2,7 @@
 
 ## Describe your project
 // THESE ARE THE ADDITIONAL REQUIREMENTS WE MADE //
-We're making a website which sells cereals and anything relating to cereals
+We're making a website which sells cereals and anything relating to cereals.
 In this project we decided to include a "Login/Register user" feature.
 We also Session store the contact and payment info so that the user
 can keep his settings saved if he wishes to make a new purchase.
