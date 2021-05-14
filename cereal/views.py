@@ -73,3 +73,16 @@ def merch_products(request, id):
     else:
         context = {'cereals': Cereal.objects.filter(is_merch=True).all().order_by('name')}
     return render(request, 'cereal/index.html', context )
+
+def sort(request, id):
+    if id == 1:
+        context = {'cereals': Cereal.objects.all().order_by('name')}
+    elif id == 2:
+        context = {'cereals': Cereal.objects.all().order_by('-name')}
+    elif id == 3:
+        context = {'cereals': Cereal.objects.all().order_by('price')}
+    elif id == 4:
+        context = {'cereals': Cereal.objects.all().order_by('-price')}
+    else:
+        context = {'cereals': Cereal.objects.all()}
+    return render(request, 'cereal/index.html', context )
