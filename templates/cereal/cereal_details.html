@@ -20,12 +20,22 @@
                 <h3>Price:</h3>
                 <p class="cereal-description">${{ cereal.price }}</p>
             </div>
-        </div>
-            <div class="btn" style="text-align: center; display:inline">
-                <div class="btn top-margin" style="color:white; background-color:green; margin-left: 40px; width: 90%;">
-                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><a style="color:white;" onclick="window.alert('Item added to cart')" href="{% url 'cart-add' cereal.pk %}"> Add to cart | ${{ cereal.price }}</a>
-                </div>
-            </div>
+            {% if user.is_authenticated %}
+                    </div>
+                        <div class="btn" style="text-align: center; display:inline">
+                            <div class="btn top-margin" style="color:white; background-color:green; margin-left: 40px; width: 90%;">
+                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><a style="color:white;" onclick="window.alert('Item added to cart')" href="{% url 'cart-add' cereal.pk %}"> Add to cart | ${{ cereal.price }}</a>
+                            </div>
+                        </div>
+             {% else %}
+                    </div>
+                        <div class="btn" style="text-align: center; display:inline">
+                            <div class="btn top-margin" style="color:white; background-color:green; margin-left: 40px; width: 90%;">
+                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><a style="color:white;" onclick="window.alert('Login to purchase')" href="{% url 'login' %}"> Add to cart | ${{ cereal.price }}</a>
+                            </div>
+                        </div>
+
+              {% endif %}
     </div>
 
 {% endblock %}
