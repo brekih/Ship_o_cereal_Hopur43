@@ -13,6 +13,13 @@
             <img src="{{ cereal_image.image }}" class="details-image"/>
             {% endfor %}
             </div>
+            <div class="col-md-6 push-down">
+                <h1 class="">{{ cereal.name }}</h1>
+                <h3>Description:</h3>
+                <p class="cereal-description">{{ cereal.description }}</p>
+                <h3>Price:</h3>
+                <p class="cereal-description">${{ cereal.price }}</p>
+            </div>
             {% if user.is_authenticated %}
                 </div>
                     <div class="btn" style="text-align: center; display:inline">
